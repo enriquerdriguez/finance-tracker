@@ -1,0 +1,18 @@
+<h2>User Details</h2>
+
+<dl>
+  <dt><strong>Name: </strong><%= @user.full_name %></dt>
+  <dd></dd>
+  <dt><strong>Email: </strong><%= @user.email %></dt>
+  <dd></dd>
+</dl>
+
+<% if @user.stocks.size > 0 %>
+<div class="row">
+  <%= render 'stocks/list' %>
+</div>
+<% else %>
+  <p class="lead"> This user is not tracking any stocks</p>
+<% end %>
+
+<%= link_to "Back", my_friends_path, class: "btn btn-md btn-primary" %>
